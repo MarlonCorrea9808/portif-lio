@@ -15,6 +15,7 @@ header {
     background-color: #222; /* Cor de fundo do cabeçalho */
     color: #fff;
     padding: 20px 0;
+    text-align: center; /* Centraliza o texto no cabeçalho */
 }
 
 header nav ul {
@@ -33,8 +34,39 @@ header nav ul li a {
     text-decoration: none;
 }
 
+.skill {
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transições suaves */
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    text-align: center;
+}
+
+.skill h3 {
+    margin-top: 0;
+}
+
+.skill p {
+    color: #fff;
+}
+
+.skill i {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.skill:hover {
+    transform: translateY(-5px); /* Levanta ligeiramente o cartão ao passar o mouse */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra mais proeminente */
+}
+
+
 .section {
     padding: 50px 0;
+    text-align: center; /* Centraliza o conteúdo das seções */
 }
 
 .project {
@@ -46,6 +78,40 @@ header nav ul li a {
     transform: scale(1.05); /* Aumenta ligeiramente o tamanho do projeto ao passar o mouse */
     opacity: 0.8; /* Reduz ligeiramente a opacidade do projeto ao passar o mouse */
 }
+
+.project {
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transições suaves */
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.project h3 {
+    margin-top: 0;
+}
+
+.project p {
+    color: #fff;
+}
+
+.project a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.project a i {
+    margin-right: 10px;
+}
+
+.project:hover {
+    transform: translateY(-5px); /* Levanta ligeiramente o cartão ao passar o mouse */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra mais proeminente */
+}
+
 
 .footer {
     background-color: #222; /* Cor de fundo do rodapé */
