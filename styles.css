@@ -1,121 +1,213 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #080808; /* Cor de fundo escura */
-    color: #fff; /* Cor do texto */
+  --bg-primary: #111111;
+  --bg-secondary: #1a1a1a;
+  --bg-card: #222222;
+  --bg-card-hover: #333333;
+  --bg-product: #1c1c1c;
+  --bg-product-hover: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --accent: chartreuse;
+  --price-color: #00ff88;
+  --whatsapp: #25D366;
+  --whatsapp-hover: #1ebe5d;
+  --border-color: #333333;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  --transition: all 0.3s ease;
 }
 
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Container principal */
 .container {
-    width: 80%;
-    margin: 0 auto;
+  display: flex;
+  min-height: 100vh;
 }
 
-header {
-    background-color: #222; /* Cor de fundo do cabeçalho */
-    color: #fff;
-    padding: 20px 0;
-    text-align: center; /* Centraliza o texto no cabeçalho */
+/* Barra lateral */
+.sidebar {
+  width: 280px;
+  background-color: var(--bg-secondary);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-right: 2px solid var(--accent);
 }
 
-header nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+/* Cards laterais */
+.card {
+  background-color: var(--bg-card);
+  border: 2px solid var(--accent);
+  padding: 15px;
+  border-radius: 50px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
 }
 
-header nav ul li {
-    display: inline;
-    margin-right: 20px;
+.card:hover {
+  background-color: var(--bg-card-hover);
+  transform: translateY(-5px) scale(1.03);
 }
 
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
+.card a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: bold;
+  font-size: 1rem;
 }
 
-.skill {
-    margin-bottom: 30px;
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Transições suaves */
-    background-color: #222;
-    border-radius: 10px;
+/* Conteúdo principal */
+.main {
+  flex: 1;
+  padding: 40px;
+}
+
+.main h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+
+.main p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* Seção do cardápio */
+.menu {
+  margin-top: 40px;
+}
+
+.menu h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: var(--accent);
+}
+
+/* Grade de produtos */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* Card do produto */
+.menu-item {
+  background-color: var(--bg-product);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.menu-item:hover {
+  background-color: var(--bg-product-hover);
+  transform: translateY(-8px) scale(1.03);
+  border-color: var(--accent);
+}
+
+/* Imagem do produto */
+.menu-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+/* Nome do produto */
+.menu-item h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+/* Preço */
+.price {
+  color: var(--price-color);
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+/* Botão do WhatsApp */
+.btn {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background-color: var(--whatsapp);
+  color: #ffffff;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--whatsapp-hover);
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 2px solid var(--accent);
+    padding: 15px;
+  }
+
+  .card {
+    min-width: 180px;
+    flex-shrink: 0;
+  }
+
+  .main {
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    text-align: center;
-}
+  }
 
-.skill h3 {
-    margin-top: 0;
-}
+  .main h1 {
+    font-size: 2.2rem;
+  }
 
-.skill p {
-    color: #fff;
-}
+  .menu h2 {
+    font-size: 1.7rem;
+  }
 
-.skill i {
-    font-size: 2rem;
-    color: #fff;
-    margin-bottom: 10px;
-}
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+  }
 
-.skill:hover {
-    transform: translateY(-5px); /* Levanta ligeiramente o cartão ao passar o mouse */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra mais proeminente */
-}
-
-
-.section {
-    padding: 50px 0;
-    text-align: center; /* Centraliza o conteúdo das seções */
-}
-
-.project {
-    margin-bottom: 30px;
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Transições suaves */
-}
-
-.project:hover {
-    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do projeto ao passar o mouse */
-    opacity: 0.8; /* Reduz ligeiramente a opacidade do projeto ao passar o mouse */
-}
-
-.project {
-    margin-bottom: 30px;
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Transições suaves */
-    background-color: #222;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
-}
-
-.project h3 {
-    margin-top: 0;
-}
-
-.project p {
-    color: #fff;
-}
-
-.project a {
-    color: #fff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-
-.project a i {
-    margin-right: 10px;
-}
-
-.project:hover {
-    transform: translateY(-5px); /* Levanta ligeiramente o cartão ao passar o mouse */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra mais proeminente */
-}
-
-
-.footer {
-    background-color: #222; /* Cor de fundo do rodapé */
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
+  .menu-item img {
+    height: 160px;
+  }
 }
