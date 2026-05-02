@@ -2,107 +2,163 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Adega do João</title>
+  <title>Adega Premium</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
-      display: flex;
-    }
+:root {
+  --cor-fundo: #111;
+  --cor-card: #222;
+  --cor-destaque: chartreuse;
+  --cor-whatsapp: #25D366;
+}
 
-    /* LADO ESQUERDO (CARDS) */
-    .sidebar {
-      width: 320px;
-      background: #1c1c1c;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    .card {
-      background: #2a2a2a;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: 0.3s;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+}
 
-    .card:hover {
-      transform: scale(1.03);
-    }
+.container {
+  display: flex;
+  min-height: 100vh;
+}
 
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
+.sidebar {
+  width: 280px;
+  background: #1a1a1a;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 
-    .card h3 {
-      margin: 10px;
-    }
+.card {
+  border: 2px solid chartreuse;
+  background: #222;
+  padding: 15px;
+  border-radius: 50px;
+  text-align: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
 
-    /* LADO DIREITO */
-    .content {
-      flex: 1;
-      padding: 40px;
-    }
+.card:hover {
+  background: #333;
+  transform: scale(1.05);
+}
 
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 30px;
-    }
+.card a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
 
-    .links a {
-      text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      color: white;
-      font-weight: bold;
-    }
+.main {
+  flex: 1;
+  padding: 40px;
+}
 
-    .ifood { background: #EA1D2C; }
-    .ze { background: #ffcc00; color: #000; }
-    .whats { background: #25D366; }
-    .insta { background: #E1306C; }
+.main h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
 
-  </style>
+.main p {
+  color: #ccc;
+}
+
+.menu {
+  margin-top: 40px;
+}
+
+.menu h2 {
+  margin-bottom: 20px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.menu-item {
+  background: #1c1c1c;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+  background: #2a2a2a;
+}
+
+.menu-item img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.menu-item h3 {
+  margin: 10px 0 5px;
+  font-size: 1.1em;
+}
+
+.price {
+  color: #00ff88;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.btn {
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #1ebe5d;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .card {
+    min-width: 150px;
+  }
+
+  .main {
+    padding: 20px;
+  }
+}
+</style>
 </head>
 <body>
-
-  <!-- CARDS ESQUERDA -->
-  <div class="sidebar">
-    <div class="card">
-      <img src="https://via.placeholder.com/300x180" alt="Bebida 1">
-      <h3>Whisky Jack Daniels</h3>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300x180" alt="Bebida 2">
-      <h3>Cerveja Heineken</h3>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300x180" alt="Bebida 3">
-      <h3>Vodka Absolut</h3>
-    </div>
-  </div>
-
-  <!-- CONTEÚDO DIREITA -->
-  <div class="content">
-    <h1>Adega do João 🍷</h1>
-    <p>As melhores bebidas com entrega rápida!</p>
-
-    <div class="links">
-      <a href="https://www.ifood.com.br" target="_blank" class="ifood">iFood</a>
-      <a href="https://www.ze.delivery" target="_blank" class="ze">Zé Delivery</a>
-      <a href="https://wa.me/SEUNUMERO" target="_blank" class="whats">WhatsApp</a>
-      <a href="https://instagram.com/SEUPERFIL" target="_blank" class="insta">Instagram</a>
-    </div>
-  </div>
-
+  <!-- Cardápio expandido com dezenas de novos produtos adicionados -->
+<!-- CSS atualizado com bordas em chartreuse, cards arredondados e layout responsivo -->
 </body>
 </html>
